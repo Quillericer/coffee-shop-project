@@ -1,7 +1,11 @@
 import Header from "../header/header";
+import Footer from "../footer/footer";
+import Divider from "../divider/divider";
 
-import coffeeBeans from './icons/coffee-beans.svg';
-import coffeeBeansBlack from './icons/coffee-beans-black.svg';
+import logo from './icons/coffee-beans-logo.svg';
+import firstImage from './img/best-products/first.png';
+import secondImage from './img/best-products/second.png';
+import thirdImage from './img/best-products/third.png';
 
 import './coffee-house.scss';
 
@@ -9,14 +13,10 @@ const CoffeeHouse = () => {
     return (
       <div>
         <section className="promo">
-          <Header />
+          <Header src={logo}/>
           <div className="container">
             <h1 className="promo__header">Everything You Love About Coffee</h1>
-            <div className="promo__image">
-              <hr className="divider"></hr>
-              <img src={coffeeBeans} alt="coffee-beans" />
-              <hr className="divider"></hr>
-            </div>
+            <Divider white/>
             <div className="promo__descr">
               We make every day full of energy and taste
               <br />
@@ -28,11 +28,7 @@ const CoffeeHouse = () => {
         <section className="about">
           <div className="container">
             <div className="about__label">About Us</div>
-            <div className="about__image">
-              <hr className="divider black"></hr>
-              <img src={coffeeBeansBlack} alt="coffee-beans-black" />
-              <hr className="divider black"></hr>
-            </div>
+            <Divider />
             <div className="about__descr">
                 Extremity sweetness difficult behaviour he of. On disposal of as
                 landlord horrible. <br />
@@ -54,8 +50,28 @@ const CoffeeHouse = () => {
         <section className="best">
             <div className="container">
                 <div className="best__label">Our best</div>
+                <div className="best__wrapper">
+                    <div className="best__products">
+                        <div className="best__product">
+                            <img src={firstImage} alt="first" className="best__product-image" />
+                            <div className="best__product-name">Solimo Coffee Beans 2 kg</div>
+                            <div className="best__product-price">10.73$</div>
+                        </div>
+                        <div className="best__product">
+                            <img src={secondImage} alt="second" className="best__product-image" />
+                            <div className="best__product-name">Presto Coffee Beans 1 kg</div>
+                            <div className="best__product-price">15.99$</div>
+                        </div>
+                        <div className="best__product">
+                            <img src={thirdImage} alt="third" className="best__product-image" />
+                            <div className="best__product-name">AROMISTICO Coffee 1 kg</div>
+                            <div className="best__product-price">6.99$</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
+        <Footer/>
       </div>
     );
 }

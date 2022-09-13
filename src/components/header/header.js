@@ -1,21 +1,27 @@
+import { Component } from 'react';
 import './header.scss';
-import coffeeBeans from './icons/coffee-beans.svg'
 
-const Header = () => {
-    return (
-        <div className="header__wrapper">
-            <div className="header-item">
-                <img src={coffeeBeans} alt="coffee-beans"/>
-                <a className="header-item__label" href="#">Coffee house</a>
-            </div>
-            <div className="header-item">
-                <a className="header-item__label" href="#">Our coffee</a>
-            </div>
-            <div className="header-item">
-                <a className="header-item__label" href="#">For your pleasure</a>
-            </div>
-        </div>
-    )
+class Header extends Component {
+    render() {
+        const {src} = this.props;
+        const footer = this.props.footer ? 'header-item__label footer' : 'header-item__label';
+        const center = this.props.footer ? 'header__wrapper center' : 'header__wrapper';
+
+        return (
+            <div className={center}>
+                <div className="header-item">
+                    <img src={src} alt="coffee-beans"/>
+                    <a className={footer} href="...">Coffee house</a>
+                </div>
+                <div className="header-item">
+                    <a className={footer} href="...">Our coffee</a>
+                </div>
+                <div className="header-item">
+                    <a className={footer} href="...">For your pleasure</a>
+                </div>
+            </div>  
+        )
+    }
 }
 
 export default Header;
