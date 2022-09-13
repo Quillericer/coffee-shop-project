@@ -50,3 +50,48 @@
     border: 1px solid #FFFFFF;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
 }
+
+.black {
+    border: 1px solid #000000;
+}
+
+.about {
+    padding-top: 80px;
+    min-height: 520px;
+    &__label {
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 35px;
+        color: #000000;
+        text-align: center;
+    }
+    &__image {
+        width: 250px;
+        margin: 10px auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__descr {
+        text-align: center;
+        margin-top: 40px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        text-align: center;
+        color: #000000;
+    }
+}
+
+.best {
+    min-height: 495px;
+    background: url("./img/paper-background.jpg") center/cover no-repeat;
+    &__label {
+        padding-top: 80px;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 35px;
+        text-align: center;
+        color: #000000;
+    }
+}
