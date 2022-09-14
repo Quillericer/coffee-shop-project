@@ -11,7 +11,7 @@ import './coffee-house.scss';
 
 const CoffeeHouse = () => {
     return (
-      <div>
+      <>
         <section className="promo">
           <Header src={logo}/>
           <div className="container">
@@ -72,7 +72,7 @@ const CoffeeHouse = () => {
             </div>
         </section>
         <Footer/>
-      </div>
+      </>
     );
 }
 
