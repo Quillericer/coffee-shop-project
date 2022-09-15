@@ -6,7 +6,6 @@ import CoffeeItem from '../coffee-item/coffee-item';
 
 import logo from '../coffee-house/icons/coffee-beans-logo.svg';
 import aboutImg from './img/about-img.jpg';
-import product from './img/product.png';
 import './our-coffee.scss';
 
 const OurCoffee = () => {
