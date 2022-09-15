@@ -1,9 +1,12 @@
 import Header from '../header/header';
 import Footer from '../footer/footer';
 import Divider from '../divider/divider';
+import CoffeeFilter from '../coffee-filter/coffee-filter';
+import CoffeeItem from '../coffee-item/coffee-item';
 
 import logo from '../coffee-house/icons/coffee-beans-logo.svg';
 import aboutImg from './img/about-img.jpg';
+import product from './img/product.png';
 import './our-coffee.scss';
 
 const OurCoffee = () => {
@@ -34,23 +37,8 @@ const OurCoffee = () => {
                     </div>
                 </div>
             </section>
-            <section className="our__filter">
-                <div className="container">
-                    <hr className="our__filter-divider"/>
-                    <div className="filter">
-                        <div className="filter__search">
-                            <div className="filter__search-text">Looking for</div>
-                            <input type="text" className="filter__search-input" placeholder="start typing here..."/>
-                        </div>
-                        <div className="filter__click">
-                            <div className="filter__click-text">Or filter</div>
-                            <button className="filter__click-button">Brazil</button>
-                            <button className="filter__click-button">Kenya</button>
-                            <button className="filter__click-button">Columbia</button>
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <CoffeeFilter/>
+            <Footer/>
         </>
     )
 }

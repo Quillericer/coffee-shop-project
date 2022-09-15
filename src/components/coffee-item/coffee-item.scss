@@ -1,0 +1,49 @@
+.filter {
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        row-gap: 60px;
+    }
+    &__item {
+        width: 226px;
+        height: 260px;
+        background: #FFFFFF;
+        box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
+        border-radius: 8px;
+        &-img {
+            display: block;
+            margin: 0 auto;
+            padding-top: 22px;
+        }
+        &-text {
+            padding: 14px 20px 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        &-name {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            text-align: center;
+            color: #000000;
+        }
+        &-region {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            text-align: right;
+            color: #000000;
+        }
+        &-price {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 20px;
+            text-align: right;
+            color: #000000;
+
+        }
+    }
+}
