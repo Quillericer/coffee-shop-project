@@ -8,7 +8,7 @@ const CoffeeFilter = () => {
     return (
         <>
             <div className="container">
-                    <hr className="our__filter-divider"/>
+                    <hr className="filter-divider"/>
                     <div className="filter">
                         <div className="filter__search">
                             <div className="filter__search-text">Looking for</div>

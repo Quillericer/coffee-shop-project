@@ -2,6 +2,10 @@ import { Component } from 'react';
 import './header.scss';
 
 class Header extends Component {
+    constructor(props) {
+        super(props);
+    }
+
     render() {
         const {src} = this.props;
         const footer = this.props.footer ? 'header-item__label footer' : 'header-item__label';
@@ -11,13 +15,13 @@ class Header extends Component {
             <div className={center}>
                 <div className="header-item">
                     <img src={src} alt="coffee-beans"/>
-                    <a className={footer} href="...">Coffee house</a>
+                    <button className={footer} onClick={() => this.props.changePage('main')}>Coffee house</button>
                 </div>
                 <div className="header-item">
-                    <a className={footer} href="...">Our coffee</a>
+                    <button className={footer} onClick={() => this.props.changePage('our')}>Our coffee</button>
                 </div>
                 <div className="header-item">
-                    <a className={footer} href="...">For your pleasure</a>
+                    <button className={footer} onClick={() => this.props.changePage('pleasure')}>For your pleasure</button>
                 </div>
             </div>  
         )
