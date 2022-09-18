@@ -4,7 +4,6 @@ import Header from '../header/header';
 import Footer from '../footer/footer';
 import Divider from '../divider/divider';
 import CoffeeFilter from '../coffee-filter/coffee-filter';
-import CoffeeItem from '../coffee-item/coffee-item';
 
 import logo from '../coffee-house/icons/coffee-beans-logo.svg';
 import aboutImg from './img/about-img.jpg';
@@ -42,7 +41,7 @@ class OurCoffee extends Component {
                         </div>
                     </div>
                 </section>
-                <CoffeeFilter/>
+                <CoffeeFilter data={this.props.data} changeRegion={this.props.changeRegion} onFilter={this.props.onFilter}/>
                 <Footer changePage={this.props.changePage}/>
             </>
         )

@@ -2,8 +2,9 @@
     &__items {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: center;
         row-gap: 60px;
+        column-gap: 110px;
     }
     &__item {
         width: 226px;

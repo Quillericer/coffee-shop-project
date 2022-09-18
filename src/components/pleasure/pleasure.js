@@ -11,9 +11,6 @@ import coffeeCup from '../pleasure/img/coffee-cup.jpg';
 import './pleasure.scss';
 
 class Pleasure extends Component {
-    constructor(props) {
-        super(props);
-    }
     render() {
         return (
             <>
@@ -42,7 +39,7 @@ class Pleasure extends Component {
                         </div>
                     </div>
                 </section>
-                <CoffeeFilter/>
+                <CoffeeFilter data={this.props.data} onFilter={this.props.onFilter} changeRegion={this.props.changeRegion}/>
                 <Footer changePage={this.props.changePage}/>
             </>
         )

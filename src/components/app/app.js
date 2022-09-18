@@ -10,23 +10,52 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            page: ''
+            page: '',
+            filter: '',
+            data: [
+                {name: 'AROMISTICO Coffee 1 kg', region: 'Brazil', price: '6.99$', img: '', id: 1},
+                {name: 'AROMISTICO Coffee 1 kg', region: 'Kenya', price: '6.99$', img: '', id: 2},
+                {name: 'AROMISTICO Coffee 1 kg', region: 'Kenya', price: '6.99$', img: '', id: 3},
+                {name: 'AROMISTICO Coffee 1 kg', region: 'Brazil', price: '6.99$', img: '', id: 4},
+                {name: 'AROMISTICO Coffee 1 kg', region: 'Columbia', price: '6.99$', img: '', id: 5},
+                {name: 'AROMISTICO Coffee 1 kg', region: 'Brazil', price: '6.99$', img: '', id: 6}
+            ]
         }
     }
 
-    changePage = (page) => {
-        this.setState({page}) // краткая запись page: page
+    changeRegion = (items, filter) => {
+        switch(filter) {
+            case('Brazil'):
+                return items.filter(item => item.region === 'Brazil');
+            case('Kenya'):
+                return items.filter(item => item.region === 'Kenya');
+            case('Columbia'):
+                return items.filter(item => item.region === 'Columbia');
+            default:
+                return items;
+        }
     }
 
+    onFilter = (filter) => {
+        this.setState({filter}); // краткая запись filter: filter
+    }
+
+    changePage = (page) => {
+        this.setState({page, filter: ''}) // краткая запись page: page
+    }
+
+    
+
     render() {
-        const {page} = this.state;
+        const {data, filter, page} = this.state;
+        const visibleData = this.changeRegion(data, filter);
         switch(page) {
             case('main'):
                 return <CoffeeHouse changePage={this.changePage}/>;
             case('our'):
-                return <OurCoffee changePage={this.changePage}/>;
+                return <OurCoffee changeRegion={this.changeRegion} onFilter={this.onFilter} changePage={this.changePage} data={visibleData}/>;
             case('pleasure'):
-                return <Pleasure changePage={this.changePage}/>;
+                return <Pleasure changeRegion={this.changeRegion} onFilter={this.onFilter} changePage={this.changePage} data={visibleData}/>;
             default:
                 return <CoffeeHouse changePage={this.changePage}/>;
         }

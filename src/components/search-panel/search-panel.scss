@@ -1,0 +1,26 @@
+.filter {
+    &__search {
+        display: flex;
+        align-items: center;
+        &-text {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            color: #000000;
+        }
+        &-input {
+            margin-left: 19px;
+            width: 180px;
+            height: 30px;
+            background: #FFFFFF;
+            box-shadow: 4px 4px 20px rgb(0 0 0 / 25%);
+            border-radius: 4px;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 17px;
+            text-align: center;
+            color: rgba(0, 0, 0, 0.5);
+            border: none;
+        }
+    }
+}

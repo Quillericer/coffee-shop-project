@@ -1,37 +1,40 @@
+import {Component} from 'react';
+
+import AppFilter from '../app-filter/app-filter';
+import SearchPanel from '../search-panel/search-panel';
 import CoffeeItem from "../coffee-item/coffee-item";
 
 import product from '../our-coffee/img/product.png';
 
 import './coffee-filter.scss';
 
-const CoffeeFilter = () => {
-    return (
-        <>
-            <div className="container">
-                    <hr className="filter-divider"/>
-                    <div className="filter">
-                        <div className="filter__search">
-                            <div className="filter__search-text">Looking for</div>
-                            <input type="text" className="filter__search-input" placeholder="start typing here..."/>
+class CoffeeFilter extends Component {
+    render() {
+        const elements = this.props.data.map(item => {
+            const {id, img, ...itemProps} = item;
+            return (
+                <CoffeeItem
+                key={id}
+                img={product}
+                {...itemProps}
+                />
+            )
+        })
+        return (
+            <>
+                <div className="container">
+                        <hr className="filter-divider"/>
+                        <div className="filter">
+                            <SearchPanel/>
+                            <AppFilter onFilter={this.props.onFilter}/>
                         </div>
-                        <div className="filter__click">
-                            <div className="filter__click-text">Or filter</div>
-                            <button className="filter__click-button">Brazil</button>
-                            <button className="filter__click-button">Kenya</button>
-                            <button className="filter__click-button">Columbia</button>
+                        <div className="filter__items">
+                            {elements}
                         </div>
                     </div>
-                    <div className="filter__items">
-                        <CoffeeItem name="AROMISTICO Coffee 1 kg" region="Brazil" price="6.99$" img={product}/>
-                        <CoffeeItem name="AROMISTICO Coffee 1 kg" region="Brazil" price="6.99$" img={product}/>
-                        <CoffeeItem name="AROMISTICO Coffee 1 kg" region="Brazil" price="6.99$" img={product}/>
-                        <CoffeeItem name="AROMISTICO Coffee 1 kg" region="Brazil" price="6.99$" img={product}/>
-                        <CoffeeItem name="AROMISTICO Coffee 1 kg" region="Brazil" price="6.99$" img={product}/>
-                        <CoffeeItem name="AROMISTICO Coffee 1 kg" region="Brazil" price="6.99$" img={product}/>
-                    </div>
-                </div>
-        </>
-    )
+            </>
+        )
+    }
 }
 
 export default CoffeeFilter;
