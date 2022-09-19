@@ -25,7 +25,7 @@ class CoffeeFilter extends Component {
                 <div className="container">
                         <hr className="filter-divider"/>
                         <div className="filter">
-                            <SearchPanel/>
+                            <SearchPanel filterPanel={this.props.filterPanel}/>
                             <AppFilter onFilter={this.props.onFilter}/>
                         </div>
                         <div className="filter__items">

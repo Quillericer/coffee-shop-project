@@ -10,9 +10,6 @@ import aboutImg from './img/about-img.jpg';
 import './our-coffee.scss';
 
 class OurCoffee extends Component {
-    constructor(props) {
-        super(props);
-    }
     render() {
         return (
             <>
@@ -41,7 +38,7 @@ class OurCoffee extends Component {
                         </div>
                     </div>
                 </section>
-                <CoffeeFilter data={this.props.data} changeRegion={this.props.changeRegion} onFilter={this.props.onFilter}/>
+                <CoffeeFilter filterPanel={this.props.filterPanel} data={this.props.data} changeRegion={this.props.changeRegion} onFilter={this.props.onFilter}/>
                 <Footer changePage={this.props.changePage}/>
             </>
         )

@@ -12,9 +12,6 @@ import thirdImage from './img/best-products/third.png';
 import './coffee-house.scss';
 
 class CoffeeHouse extends Component {
-  constructor(props) {
-    super(props);
-  }
     render() {
       return (
         <>
@@ -28,7 +25,7 @@ class CoffeeHouse extends Component {
                 <br />
                 Want to try our beans?
               </div>
-              <a className="promo__btn" href="#best">More</a>
+              <a className="promo__btn" onClick={() => this.props.changePage('our')}>More</a>
             </div>
           </section>
           <section className="about">
@@ -53,7 +50,7 @@ class CoffeeHouse extends Component {
               </div>
             </div>
           </section>
-          <section className="best" id="best">
+          <section className="best">
               <div className="container">
                   <div className="best__label">Our best</div>
                   <div className="best__wrapper">

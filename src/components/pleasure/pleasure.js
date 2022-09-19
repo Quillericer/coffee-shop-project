@@ -39,7 +39,7 @@ class Pleasure extends Component {
                         </div>
                     </div>
                 </section>
-                <CoffeeFilter data={this.props.data} onFilter={this.props.onFilter} changeRegion={this.props.changeRegion}/>
+                <CoffeeFilter data={this.props.data} filterPanel={this.props.filterPanel} onFilter={this.props.onFilter} changeRegion={this.props.changeRegion}/>
                 <Footer changePage={this.props.changePage}/>
             </>
         )

@@ -12,6 +12,7 @@ class App extends Component {
         this.state = {
             page: '',
             filter: '',
+            term: '',
             data: [
                 {name: 'AROMISTICO Coffee 1 kg', region: 'Brazil', price: '6.99$', img: '', id: 1},
                 {name: 'AROMISTICO Coffee 1 kg', region: 'Kenya', price: '6.99$', img: '', id: 2},
@@ -21,6 +22,19 @@ class App extends Component {
                 {name: 'AROMISTICO Coffee 1 kg', region: 'Brazil', price: '6.99$', img: '', id: 6}
             ]
         }
+    }
+
+    searchEmp = (items, term) => {
+        if (term.length === 0) {
+            return items;
+        }
+        return items.filter(item => {
+            return item.name.indexOf(term) > - 1;
+        })
+    }
+
+    filterPanel = (term) => {
+        this.setState({term});
     }
 
     changeRegion = (items, filter) => {
@@ -47,15 +61,15 @@ class App extends Component {
     
 
     render() {
-        const {data, filter, page} = this.state;
-        const visibleData = this.changeRegion(data, filter);
+        const {data, filter, page, term} = this.state;
+        const visibleData = this.changeRegion(this.searchEmp(data, term), filter);
         switch(page) {
             case('main'):
                 return <CoffeeHouse changePage={this.changePage}/>;
             case('our'):
-                return <OurCoffee changeRegion={this.changeRegion} onFilter={this.onFilter} changePage={this.changePage} data={visibleData}/>;
+                return <OurCoffee changeRegion={this.changeRegion} filterPanel={this.filterPanel} onFilter={this.onFilter} changePage={this.changePage} data={visibleData}/>;
             case('pleasure'):
-                return <Pleasure changeRegion={this.changeRegion} onFilter={this.onFilter} changePage={this.changePage} data={visibleData}/>;
+                return <Pleasure changeRegion={this.changeRegion} filterPanel={this.filterPanel} onFilter={this.onFilter} changePage={this.changePage} data={visibleData}/>;
             default:
                 return <CoffeeHouse changePage={this.changePage}/>;
         }
