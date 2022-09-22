@@ -2,14 +2,11 @@ import { Component } from "react";
 
 import Header from '../header/header';
 
-import logo from '../coffee-house/icons/coffee-beans-logo.svg';
+import logo from '../../assets/icons/coffee-beans-logo.svg';
 
 import './section-header.scss';
 
 class SectionHeader extends Component {
-    constructor(props) {
-        super(props);
-    }
     render() {
         const {img, label} = this.props;
         return (

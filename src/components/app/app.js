@@ -4,6 +4,12 @@ import CoffeeHouse from "../coffee-house/coffee-house";
 import OurCoffee from "../our-coffee/our-coffee";
 import Pleasure from "../pleasure/pleasure";
 
+import aromistico from '../../assets/img/aromistico.png';
+import solimo from '../../assets/img/solimo.png';
+import presto from '../../assets/img/presto.png';
+
+
+
 import './app.scss';
 
 class App extends Component {
@@ -14,12 +20,17 @@ class App extends Component {
             filter: '',
             term: '',
             data: [
-                {name: 'AROMISTICO Coffee 1 kg', region: 'Brazil', price: '6.99$', img: '', id: 1},
-                {name: 'AROMISTICO Coffee 1 kg', region: 'Kenya', price: '6.99$', img: '', id: 2},
-                {name: 'AROMISTICO Coffee 1 kg', region: 'Kenya', price: '6.99$', img: '', id: 3},
-                {name: 'AROMISTICO Coffee 1 kg', region: 'Brazil', price: '6.99$', img: '', id: 4},
-                {name: 'AROMISTICO Coffee 1 kg', region: 'Columbia', price: '6.99$', img: '', id: 5},
-                {name: 'AROMISTICO Coffee 1 kg', region: 'Brazil', price: '6.99$', img: '', id: 6}
+                {name: 'AROMISTICO Coffee 1 kg', region: 'Brazil', price: '6.99$', img: aromistico, id: 1},
+                {name: 'AROMISTICO Coffee 1 kg', region: 'Kenya', price: '6.99$', img: aromistico, id: 2},
+                {name: 'AROMISTICO Coffee 1 kg', region: 'Columbia', price: '6.99$', img: aromistico, id: 3},
+                {name: 'AROMISTICO Coffee 1 kg', region: 'Brazil', price: '6.99$', img: aromistico, id: 4},
+                {name: 'AROMISTICO Coffee 1 kg', region: 'Brazil', price: '6.99$', img: aromistico, id: 5},
+                {name: 'AROMISTICO Coffee 1 kg', region: 'Brazil', price: '6.99$', img: aromistico, id: 6}
+            ],
+            best: [
+                {name: 'Solimo Coffee Beans 2 kg', price: '10.73$', img: solimo, id: 1},
+                {name: 'Presto Coffee Beans 1 kg', price: '15.99$', img: presto, id: 2},
+                {name: 'AROMISTICO Coffee 1 kg', price: '6.99$', img: aromistico, id: 3}
             ]
         }
     }
@@ -61,17 +72,18 @@ class App extends Component {
     
 
     render() {
-        const {data, filter, page, term} = this.state;
+        const {data, filter, page, term, best} = this.state;
         const visibleData = this.changeRegion(this.searchEmp(data, term), filter);
+
         switch(page) {
             case('main'):
-                return <CoffeeHouse changePage={this.changePage}/>;
+                return <CoffeeHouse bestData={best} changePage={this.changePage}/>;
             case('our'):
                 return <OurCoffee changeRegion={this.changeRegion} filterPanel={this.filterPanel} onFilter={this.onFilter} changePage={this.changePage} data={visibleData}/>;
             case('pleasure'):
                 return <Pleasure changeRegion={this.changeRegion} filterPanel={this.filterPanel} onFilter={this.onFilter} changePage={this.changePage} data={visibleData}/>;
             default:
-                return <CoffeeHouse changePage={this.changePage}/>;
+                return <CoffeeHouse bestData={best} changePage={this.changePage}/>;
         }
     }
 }

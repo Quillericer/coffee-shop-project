@@ -3,11 +3,9 @@ import { Component } from "react";
 import Header from "../header/header";
 import Footer from "../footer/footer";
 import Divider from "../divider/divider";
+import CoffeeBest from '../coffee-best/coffee-best';
 
-import logo from './icons/coffee-beans-logo.svg';
-import firstImage from './img/best-products/first.png';
-import secondImage from './img/best-products/second.png';
-import thirdImage from './img/best-products/third.png';
+import logo from '../../assets/icons/coffee-beans-logo.svg';
 
 import './coffee-house.scss';
 
@@ -53,25 +51,7 @@ class CoffeeHouse extends Component {
           <section className="best">
               <div className="container">
                   <div className="best__label">Our best</div>
-                  <div className="best__wrapper">
-                      <div className="best__products">
-                          <div className="best__product">
-                              <img src={firstImage} alt="first" className="best__product-image" />
-                              <div className="best__product-name">Solimo Coffee Beans 2 kg</div>
-                              <div className="best__product-price">10.73$</div>
-                          </div>
-                          <div className="best__product">
-                              <img src={secondImage} alt="second" className="best__product-image" />
-                              <div className="best__product-name">Presto Coffee Beans 1 kg</div>
-                              <div className="best__product-price">15.99$</div>
-                          </div>
-                          <div className="best__product">
-                              <img src={thirdImage} alt="third" className="best__product-image" />
-                              <div className="best__product-name">AROMISTICO Coffee 1 kg</div>
-                              <div className="best__product-price">6.99$</div>
-                          </div>
-                      </div>
-                  </div>
+                  <CoffeeBest bestData={this.props.bestData}/>
               </div>
           </section>
           <Footer changePage={this.props.changePage}/>

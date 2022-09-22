@@ -1,7 +1,7 @@
 import { Component } from 'react';
 
-import coffeeBeansBlack from '../coffee-house/icons/coffee-beans-black.svg';
-import coffeeBeansWhite from '../coffee-house/icons/coffee-beans.svg';
+import coffeeBeansBlack from '../../assets/icons/coffee-beans-black.svg';
+import coffeeBeansWhite from '../../assets/icons/coffee-beans.svg';
 
 import './divider.scss';
 

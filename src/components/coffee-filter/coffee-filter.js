@@ -4,18 +4,16 @@ import AppFilter from '../app-filter/app-filter';
 import SearchPanel from '../search-panel/search-panel';
 import CoffeeItem from "../coffee-item/coffee-item";
 
-import product from '../our-coffee/img/product.png';
 
 import './coffee-filter.scss';
 
 class CoffeeFilter extends Component {
     render() {
         const elements = this.props.data.map(item => {
-            const {id, img, ...itemProps} = item;
+            const {id, ...itemProps} = item;
             return (
                 <CoffeeItem
                 key={id}
-                img={product}
                 {...itemProps}
                 />
             )
