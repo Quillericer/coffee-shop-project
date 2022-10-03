@@ -1,5 +1,3 @@
-import {Component} from 'react';
-
 import AppFilter from '../app-filter/app-filter';
 import SearchPanel from '../search-panel/search-panel';
 import CoffeeItem from "../coffee-item/coffee-item";
@@ -7,32 +5,30 @@ import CoffeeItem from "../coffee-item/coffee-item";
 
 import './coffee-filter.scss';
 
-class CoffeeFilter extends Component {
-    render() {
-        const elements = this.props.data.map(item => {
-            const {id, ...itemProps} = item;
-            return (
-                <CoffeeItem
-                key={id}
-                {...itemProps}
-                />
-            )
-        })
+const CoffeeFilter = (props) => {
+    const elements = props.data.map(item => {
+        const {id, ...itemProps} = item;
         return (
-            <>
-                <div className="container">
-                        <hr className="filter-divider"/>
-                        <div className="filter">
-                            <SearchPanel filterPanel={this.props.filterPanel}/>
-                            <AppFilter onFilter={this.props.onFilter}/>
-                        </div>
-                        <div className="filter__items">
-                            {elements}
-                        </div>
-                    </div>
-            </>
+            <CoffeeItem
+            key={id}
+            {...itemProps}
+            />
         )
-    }
+    })
+    return (
+        <>
+            <div className="container">
+                    <hr className="filter-divider"/>
+                    <div className="filter">
+                        <SearchPanel filterPanel={props.filterPanel}/>
+                        <AppFilter onFilter={props.onFilter}/>
+                    </div>
+                    <div className="filter__items">
+                        {elements}
+                    </div>
+                </div>
+        </>
+    )
 }
 
 export default CoffeeFilter;

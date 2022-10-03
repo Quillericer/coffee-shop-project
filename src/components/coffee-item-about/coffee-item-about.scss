@@ -1,0 +1,43 @@
+.coffee {
+    margin-top: 79px;
+    &__info {
+        display: flex;
+        &-text {
+            margin-left: 45px;
+            span {
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 20px;
+                color: #000000;
+            }
+        }
+        &-label {
+            text-align: center;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 35px;
+            color: #000000;
+        }
+        &-region {
+            padding-top: 16px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            color: #000000;
+        }
+        &-descr {
+            padding-top: 16px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            color: #000000;
+        }
+        &-price {
+            padding-top: 16px;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 20px;
+            color: #000000;
+        }
+    }
+}
