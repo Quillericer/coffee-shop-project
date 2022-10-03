@@ -21,7 +21,7 @@ const CoffeeFilter = (props) => {
                     <hr className="filter-divider"/>
                     <div className="filter">
                         <SearchPanel filterPanel={props.filterPanel}/>
-                        <AppFilter onFilter={props.onFilter}/>
+                        <AppFilter onFilter={props.onFilter} filter={props.filter}/>
                     </div>
                     <div className="filter__items">
                         {elements}

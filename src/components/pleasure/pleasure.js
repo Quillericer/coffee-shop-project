@@ -32,6 +32,7 @@ const Pleasure = (props) => {
         filterPanel={props.filterPanel}
         onFilter={props.onFilter}
         changeRegion={props.changeRegion}
+        filter={props.filter}
       />
       <Footer changePage={props.changePage} />
     </>

@@ -23,6 +23,21 @@
             text-align: center;
             color: #000000;
             border: none;
+            &:hover {
+                color: #FFFFFF;
+                background: #000000;
+                transition: 0.5s;
+            }
+            &:active {
+                color: #000000;
+                background: #FFFFFF;
+                transition: 0.1s;
+            }
         }
     }
+}
+
+.active {
+    color: #FFFFFF;
+    background: #000000; 
 }

@@ -20,18 +20,19 @@ class App extends Component {
             filter: '',
             term: '',
             data: [
-                {name: 'AROMISTICO Coffee 1 kg', region: 'Brazil', price: '6.99$', img: aromistico, id: 1},
-                {name: 'AROMISTICO Coffee 1 kg', region: 'Kenya', price: '6.99$', img: aromistico, id: 2},
-                {name: 'AROMISTICO Coffee 1 kg', region: 'Columbia', price: '6.99$', img: aromistico, id: 3},
-                {name: 'AROMISTICO Coffee 1 kg', region: 'Brazil', price: '6.99$', img: aromistico, id: 4},
-                {name: 'AROMISTICO Coffee 1 kg', region: 'Brazil', price: '6.99$', img: aromistico, id: 5},
-                {name: 'AROMISTICO Coffee 1 kg', region: 'Brazil', price: '6.99$', img: aromistico, id: 6}
+                {name: 'AROMISTICO Coffee 1 kg', region: 'Brazil', price: '6.99$', img: aromistico, id: 1, active: false},
+                {name: 'AROMISTICO Coffee 1 kg', region: 'Kenya', price: '6.99$', img: aromistico, id: 2, active: false},
+                {name: 'AROMISTICO Coffee 1 kg', region: 'Columbia', price: '6.99$', img: aromistico, id: 3, active: false},
+                {name: 'AROMISTICO Coffee 1 kg', region: 'Brazil', price: '6.99$', img: aromistico, id: 4, active: false},
+                {name: 'AROMISTICO Coffee 1 kg', region: 'Brazil', price: '6.99$', img: aromistico, id: 5, active: false},
+                {name: 'AROMISTICO Coffee 1 kg', region: 'Brazil', price: '6.99$', img: aromistico, id: 6, active: false}
             ],
             best: [
                 {name: 'Solimo Coffee Beans 2 kg', price: '10.73$', img: solimo, id: 1},
                 {name: 'Presto Coffee Beans 1 kg', price: '15.99$', img: presto, id: 2},
                 {name: 'AROMISTICO Coffee 1 kg', price: '6.99$', img: aromistico, id: 3}
-            ]
+            ],
+            active: ''
         }
     }
 
@@ -63,6 +64,7 @@ class App extends Component {
 
     onFilter = (filter) => {
         this.setState({filter}); // краткая запись filter: filter
+
     }
 
     changePage = (page) => {
@@ -79,9 +81,9 @@ class App extends Component {
             case('main'):
                 return <CoffeeHouse bestData={best} changePage={this.changePage}/>;
             case('our'):
-                return <OurCoffee changeRegion={this.changeRegion} filterPanel={this.filterPanel} onFilter={this.onFilter} changePage={this.changePage} data={visibleData}/>;
+                return <OurCoffee changeRegion={this.changeRegion} filterPanel={this.filterPanel} onFilter={this.onFilter} changePage={this.changePage} data={visibleData} filter={filter}/>;
             case('pleasure'):
-                return <Pleasure changeRegion={this.changeRegion} filterPanel={this.filterPanel} onFilter={this.onFilter} changePage={this.changePage} data={visibleData}/>;
+                return <Pleasure changeRegion={this.changeRegion} filterPanel={this.filterPanel} onFilter={this.onFilter} changePage={this.changePage} data={visibleData} filter={filter}/>;
             default:
                 return <CoffeeHouse bestData={best} changePage={this.changePage}/>;
         }

@@ -8,9 +8,10 @@ const AppFilter = (props) => {
   ];
 
   const buttons = buttonsData.map(({ name, label }) => {
+    const clazz = props.filter === name ? 'active' : '';
     return (
       <button
-        className="filter__click-button"
+        className={`filter__click-button ${clazz}`}
         type="button"
         key={name}
         onClick={() => props.onFilter(name)}
@@ -26,6 +27,7 @@ const AppFilter = (props) => {
       {buttons}
     </div>
   );
+
 };
 
 export default AppFilter;

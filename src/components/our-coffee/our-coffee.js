@@ -2,6 +2,7 @@ import SectionHeader from '../section-header/section-header';
 import AboutSection from '../about-section/about-section';
 import Footer from '../footer/footer';
 import CoffeeFilter from '../coffee-filter/coffee-filter';
+import CoffeeItemAbout from '../coffee-item-about/coffee-item-about';
 
 import headerImg from '../../assets/img/our-coffee-promo.jpg';
 import aboutImg from '../../assets/img/about-img.jpg';
@@ -15,8 +16,9 @@ const OurCoffee = (props) => {
         return (
             <>
                 <SectionHeader img={headerImg} label='Our Coffee' changePage={props.changePage}/>
-                <AboutSection img={aboutImg} label='About out goods' descr={[firstPart, <br/>, <br/>, secondPart, <br/>, thirdPart]}/>
-                <CoffeeFilter filterPanel={props.filterPanel} data={props.data} changeRegion={props.changeRegion} onFilter={props.onFilter}/>
+                <CoffeeItemAbout/>
+                {/* <AboutSection img={aboutImg} label='About out goods' descr={[firstPart, <br/>, <br/>, secondPart, <br/>, thirdPart]}/>
+                <CoffeeFilter filterPanel={props.filterPanel} data={props.data} changeRegion={props.changeRegion} onFilter={props.onFilter} filter={props.filter}/> */}
                 <Footer changePage={props.changePage}/>
             </>
         )
