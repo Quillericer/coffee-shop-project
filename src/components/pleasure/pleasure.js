@@ -9,12 +9,7 @@ import coffeeCup from "../../assets/img/coffee-cup.jpg";
 import "./pleasure.scss";
 
 const Pleasure = (props) => {
-  const firstPart =
-      "Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible.",
-    secondPart =
-      "Afraid at highly months do things on at. Situation recommend objection do intention so questions.",
-    thirdPart =
-      "As greatly removed calling pleased improve an. Last ask him cold feel met spot shy want. Children me laughing we prospect answered followed. At it went is song that held help face.";
+  const descr = 'Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible. Afraid at highly months do things on at. Situation recommend objection do intention so questions. As greatly removed calling pleased improve an. Last ask him cold feel met spot shy want. Children me laughing we prospect answered followed. At it went is song that held help face.'
   return (
     <>
       <SectionHeader
@@ -25,7 +20,7 @@ const Pleasure = (props) => {
       <AboutSection
         img={coffeeCup}
         label="About out goods"
-        descr={[firstPart, <br />, <br />, secondPart, <br />, thirdPart]}
+        descr={descr}
       />
       <CoffeeFilter
         data={props.data}

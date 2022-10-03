@@ -6,6 +6,7 @@ import CoffeeItem from "../coffee-item/coffee-item";
 import './coffee-filter.scss';
 
 const CoffeeFilter = (props) => {
+
     const elements = props.data.map(item => {
         const {id, ...itemProps} = item;
         return (
