@@ -2,7 +2,8 @@
     min-height: 959px;
     background: url('../../assets/img/coffee-table.jpg') center/cover no-repeat;
     &__header {
-        margin-top: 220px;
+        padding-top: 220px;
+        margin-top: 0;
         margin-bottom: 0;
         text-align: center;
         font-weight: 700;
@@ -45,8 +46,8 @@
         text-align: center;
         padding-top: 3px;
         &:hover {
-            border: 1px solid #000000;
-            background-color: #000000;
+            border: 1px solid #D2B48C;
+            background-color: #D2B48C;
             transition: 0.5s;
         }
     }
@@ -116,14 +117,5 @@
         }
         
     }
-}
-
-.footer {
-    color: #000000;
-}
-
-.center {
-    padding: 52px 0 0 0;
-    margin: 0 auto;
 }
 

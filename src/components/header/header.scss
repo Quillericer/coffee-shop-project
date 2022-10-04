@@ -1,10 +1,14 @@
 .header {
+    background-color: #D2B48C;
+    padding: 15px 0 15px 0;
     &__wrapper {
         width: 355px;
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
-        padding: 52px 0 0 148px;
+        list-style-type: none;
+        margin: 0 auto;
+        padding-left: 0;
     }
     &-item {
         &__label {
@@ -18,7 +22,7 @@
             border: none;
             &:hover {
                 color: #000;
-                transition: 0.5s;
+                transition: 0.3s;
             }
         }
     }

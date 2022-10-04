@@ -1,6 +1,5 @@
 import SectionHeader from "../section-header/section-header";
 import AboutSection from "../about-section/about-section";
-import Footer from "../footer/footer";
 import CoffeeFilter from "../coffee-filter/coffee-filter";
 
 import headerImg from "../../assets/img/pleasure-promo.jpg";
@@ -29,7 +28,6 @@ const Pleasure = (props) => {
         changeRegion={props.changeRegion}
         filter={props.filter}
       />
-      <Footer changePage={props.changePage} />
     </>
   );
 };

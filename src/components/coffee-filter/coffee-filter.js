@@ -17,10 +17,10 @@ const CoffeeFilter = (props) => {
         )
     })
     return (
-        <>
+        <section className='filter'>
             <div className="container">
-                    <hr className="filter-divider"/>
-                    <div className="filter">
+                    <hr className="filter__divider"/>
+                    <div className="filter__components">
                         <SearchPanel filterPanel={props.filterPanel}/>
                         <AppFilter onFilter={props.onFilter} filter={props.filter}/>
                     </div>
@@ -28,7 +28,7 @@ const CoffeeFilter = (props) => {
                         {elements}
                     </div>
                 </div>
-        </>
+        </section>
     )
 }
 

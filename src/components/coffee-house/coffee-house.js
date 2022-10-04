@@ -1,9 +1,6 @@
-import Header from "../header/header";
-import Footer from "../footer/footer";
 import Divider from "../divider/divider";
 import CoffeeBest from "../coffee-best/coffee-best";
 
-import logo from "../../assets/icons/coffee-beans-logo.svg";
 
 import "./coffee-house.scss";
 
@@ -11,7 +8,6 @@ const CoffeeHouse = (props) => {
   return (
     <>
       <section className="promo">
-        <Header src={logo} changePage={props.changePage} />
         <div className="container">
           <h1 className="promo__header">Everything You Love About Coffee</h1>
           <Divider white />
@@ -20,7 +16,7 @@ const CoffeeHouse = (props) => {
             <br />
             Want to try our beans?
           </div>
-          <a className="promo__btn" onClick={() => props.changePage("our")}>
+          <a className="promo__btn" href="#best">
             More
           </a>
         </div>
@@ -47,13 +43,12 @@ const CoffeeHouse = (props) => {
           </div>
         </div>
       </section>
-      <section className="best">
+      <section className="best" id="best">
         <div className="container">
           <div className="best__label">Our best</div>
           <CoffeeBest bestData={props.bestData} />
         </div>
       </section>
-      <Footer changePage={props.changePage} />
     </>
   );
 };

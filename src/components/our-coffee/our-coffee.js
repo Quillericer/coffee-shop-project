@@ -1,6 +1,5 @@
 import SectionHeader from '../section-header/section-header';
 import AboutSection from '../about-section/about-section';
-import Footer from '../footer/footer';
 import CoffeeFilter from '../coffee-filter/coffee-filter';
 import CoffeeItemAbout from '../coffee-item-about/coffee-item-about';
 
@@ -16,7 +15,6 @@ const OurCoffee = (props) => {
                 <SectionHeader img={headerImg} label='Our Coffee' changePage={props.changePage}/>
                 <AboutSection img={aboutImg} label='About out goods' descr={descr}/>
                 <CoffeeFilter filterPanel={props.filterPanel} data={props.data} changeRegion={props.changeRegion} onFilter={props.onFilter} filter={props.filter}/>
-                <Footer changePage={props.changePage}/>
             </>
         )
 }
