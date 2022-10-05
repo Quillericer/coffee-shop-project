@@ -41,3 +41,17 @@
         }
     }
 }
+
+.go-back {
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+    margin-bottom: 20px;
+    &:hover {
+        color: #D2B48C;
+        transition: 0.3s;
+    }
+}

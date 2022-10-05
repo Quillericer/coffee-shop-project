@@ -1,6 +1,6 @@
 import Divider from "../divider/divider";
 import CoffeeBest from "../coffee-best/coffee-best";
-
+import { Link } from "react-router-dom";
 
 import "./coffee-house.scss";
 
@@ -16,9 +16,9 @@ const CoffeeHouse = (props) => {
             <br />
             Want to try our beans?
           </div>
-          <a className="promo__btn" href="#best">
+          <Link className="promo__btn" to="/our-coffee">
             More
-          </a>
+          </Link>
         </div>
       </section>
       <section className="about">

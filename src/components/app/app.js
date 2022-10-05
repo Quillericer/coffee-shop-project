@@ -1,11 +1,12 @@
 import { Component } from "react";
 
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link, useParams } from "react-router-dom";
 
 import CoffeeHouse from "../coffee-house/coffee-house";
 import OurCoffee from "../our-coffee/our-coffee";
 import Pleasure from "../pleasure/pleasure";
 import Divider from "../divider/divider";
+import CoffeeItemAbout from "../coffee-item-about/coffee-item-about";
 
 import headerLogo from "../../assets/icons/coffee-beans-logo.svg";
 import footerLogo from '../../assets/icons/coffee-beans-logo-black.svg';
@@ -17,6 +18,71 @@ import "../header/header.scss";
 import '../footer/footer.scss';
 import "./app.scss";
 
+const data = [
+  {
+    name: "AROMISTICO Coffee 1 kg",
+    region: "Brazil",
+    price: "6.99$",
+    img: aromistico,
+    id: 1
+  },
+  {
+    name: "AROMISTICO Coffee 1 kg",
+    region: "Kenya",
+    price: "6.99$",
+    img: aromistico,
+    id: 2
+  },
+  {
+    name: "AROMISTICO Coffee 1 kg",
+    region: "Columbia",
+    price: "6.99$",
+    img: aromistico,
+    id: 3
+  },
+  {
+    name: "AROMISTICO Coffee 1 kg",
+    region: "Brazil",
+    price: "6.99$",
+    img: aromistico,
+    id: 4
+  },
+  {
+    name: "AROMISTICO Coffee 1 kg",
+    region: "Brazil",
+    price: "6.99$",
+    img: aromistico,
+    id: 5
+  },
+  {
+    name: "AROMISTICO Coffee 1 kg",
+    region: "Brazil",
+    price: "6.99$",
+    img: aromistico,
+    id: 6
+  },
+];
+
+const best = [
+  {
+    name: "Solimo Coffee Beans 2 kg",
+    price: "10.73$",
+    img: solimo,
+    id: 1,
+  },
+  {
+    name: "Presto Coffee Beans 1 kg",
+    price: "15.99$",
+    img: presto,
+    id: 2,
+  },
+  {
+    name: "AROMISTICO Coffee 1 kg",
+    price: "6.99$",
+    img: aromistico,
+    id: 3,
+  },
+];
 
 class App extends Component {
   constructor(props) {
@@ -24,77 +90,9 @@ class App extends Component {
     this.state = {
       filter: "",
       term: "",
-      data: [
-        {
-          name: "AROMISTICO Coffee 1 kg",
-          region: "Brazil",
-          price: "6.99$",
-          img: aromistico,
-          id: 1,
-          active: false,
-        },
-        {
-          name: "AROMISTICO Coffee 1 kg",
-          region: "Kenya",
-          price: "6.99$",
-          img: aromistico,
-          id: 2,
-          active: false,
-        },
-        {
-          name: "AROMISTICO Coffee 1 kg",
-          region: "Columbia",
-          price: "6.99$",
-          img: aromistico,
-          id: 3,
-          active: false,
-        },
-        {
-          name: "AROMISTICO Coffee 1 kg",
-          region: "Brazil",
-          price: "6.99$",
-          img: aromistico,
-          id: 4,
-          active: false,
-        },
-        {
-          name: "AROMISTICO Coffee 1 kg",
-          region: "Brazil",
-          price: "6.99$",
-          img: aromistico,
-          id: 5,
-          active: false,
-        },
-        {
-          name: "AROMISTICO Coffee 1 kg",
-          region: "Brazil",
-          price: "6.99$",
-          img: aromistico,
-          id: 6,
-          active: false,
-        },
-      ],
-      best: [
-        {
-          name: "Solimo Coffee Beans 2 kg",
-          price: "10.73$",
-          img: solimo,
-          id: 1,
-        },
-        {
-          name: "Presto Coffee Beans 1 kg",
-          price: "15.99$",
-          img: presto,
-          id: 2,
-        },
-        {
-          name: "AROMISTICO Coffee 1 kg",
-          price: "6.99$",
-          img: aromistico,
-          id: 3,
-        },
-      ],
-      active: "",
+      activeId: "",
+      data,
+      best
     };
   }
 
@@ -123,6 +121,10 @@ class App extends Component {
         return items;
     }
   };
+
+  onActive = (activeId) => {
+    this.setState({activeId});
+  }
 
   onFilter = (filter) => {
     this.setState({ filter }); // краткая запись filter: filter
@@ -168,6 +170,7 @@ class App extends Component {
                 onFilter={this.onFilter}
                 data={visibleData}
                 filter={filter}
+                onActive={this.onActive}
               />
             }
           />
@@ -182,6 +185,10 @@ class App extends Component {
                 filter={filter}
               />
             }
+          />
+          <Route
+          path="/coffee-item-about/:id"
+          element={<CoffeePage/>}
           />
         </Routes>
         <footer className="footer">
@@ -219,6 +226,12 @@ class App extends Component {
     //         return <CoffeeHouse bestData={best} changePage={this.changePage}/>;
     // }
   }
+}
+
+function CoffeePage() {
+  const params = useParams();
+  const filteredData = data.find(item => item.id == params.id);
+  return <CoffeeItemAbout id={params.id} data={filteredData}/>
 }
 
 export default App;
