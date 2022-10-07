@@ -1,9 +1,17 @@
 .filter {
+    &__reset {
+        cursor: pointer;
+        margin: 0 5px 0 5px;
+        &:hover {
+            color: #D2B48C;
+            transition: 0.3s;
+        }
+    }
     &__click {
         display: flex;
         align-items: center;
         &-text {
-            margin-right: 35px;
+            margin-right: 15px;
             font-weight: 400;
             font-size: 14px;
             line-height: 20px;

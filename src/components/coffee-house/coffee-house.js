@@ -1,12 +1,16 @@
 import Divider from "../divider/divider";
 import CoffeeBest from "../coffee-best/coffee-best";
 import { Link } from "react-router-dom";
+import Header from '../header/header';
+import Footer from '../footer/footer';
+
 
 import "./coffee-house.scss";
 
 const CoffeeHouse = (props) => {
   return (
     <>
+      <Header/>
       <section className="promo">
         <div className="container">
           <h1 className="promo__header">Everything You Love About Coffee</h1>
@@ -49,6 +53,7 @@ const CoffeeHouse = (props) => {
           <CoffeeBest bestData={props.bestData} />
         </div>
       </section>
+      <Footer/>
     </>
   );
 };

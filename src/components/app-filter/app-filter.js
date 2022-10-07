@@ -22,10 +22,13 @@ const AppFilter = (props) => {
   });
 
   return (
-    <div className="filter__click">
-      <div className="filter__click-text">Or filter</div>
-      {buttons}
-    </div>
+    <>
+      <div className="filter__click">
+        <div className="filter__click-text">Or filter</div>
+        {buttons}
+        <div className="filter__reset" onClick={() => props.onFilter("")}>Reset filters</div>
+      </div>
+    </>
   );
 
 };
