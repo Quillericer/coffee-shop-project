@@ -1,9 +1,10 @@
+import { memo } from "react";
 import coffeeBeansBlack from "../../assets/icons/coffee-beans-black.svg";
 import coffeeBeansWhite from "../../assets/icons/coffee-beans.svg";
 
 import "./divider.scss";
 
-const Divider = (props) => {
+const Divider = memo((props) => {
   const dividerWhite = props.white ? "divider" : "divider black";
   const beansWhite = props.white ? coffeeBeansWhite : coffeeBeansBlack;
   return (
@@ -13,6 +14,6 @@ const Divider = (props) => {
       <hr className={dividerWhite}></hr>
     </div>
   );
-};
+})
 
 export default Divider;

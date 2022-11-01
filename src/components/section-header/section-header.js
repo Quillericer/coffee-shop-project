@@ -1,6 +1,7 @@
+import { memo } from "react";
 import "./section-header.scss";
 
-const SectionHeader = (props) => {
+const SectionHeader = memo((props) => {
   const { img, label } = props;
   return (
     <section
@@ -10,6 +11,6 @@ const SectionHeader = (props) => {
       <div className="section__promo-label">{label}</div>
     </section>
   );
-};
+})
 
 export default SectionHeader;

@@ -1,8 +1,10 @@
+import { memo } from "react";
+
 import Divider from "../divider/divider";
 
 import "./about-section.scss";
 
-const AboutSection = (props) => {
+const AboutSection = memo((props) => {
   const { img, label, descr } = props;
   return (
     <section className="our__about">
@@ -18,6 +20,6 @@ const AboutSection = (props) => {
       </div>
     </section>
   );
-};
+})
 
 export default AboutSection;

@@ -1,6 +1,8 @@
+import { memo } from "react";
+
 import "./coffee-best.scss";
 
-const CoffeeBest = (props) => {
+const CoffeeBest = memo((props) => {
   const bestProducts = props.bestData.map((item) => {
     const { id, img, name, price } = item;
     return (
@@ -12,6 +14,6 @@ const CoffeeBest = (props) => {
     );
   });
   return <div className="best__products">{bestProducts}</div>;
-};
+})
 
 export default CoffeeBest;

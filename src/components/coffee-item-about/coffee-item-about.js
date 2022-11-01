@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 import { useNavigate } from "react-router-dom";
 
 import Header from "../header/header";
@@ -8,7 +10,7 @@ import product from "../../assets/img/aromistico-about.jpg";
 
 import "./coffee-item-about.scss";
 
-const CoffeeItemAbout = (props) => {
+const CoffeeItemAbout = memo((props) => {
   const { region, price } = props.data;
   const navigate = useNavigate();
   return (
@@ -44,6 +46,6 @@ const CoffeeItemAbout = (props) => {
       <Footer />
     </>
   );
-}
+})
 
 export default CoffeeItemAbout;
