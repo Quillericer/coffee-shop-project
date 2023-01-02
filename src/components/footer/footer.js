@@ -11,17 +11,17 @@ const Footer = memo(() => {
       <ul className="footer__wrapper">
         <li className="footer-item">
           <img src={footerLogo} alt="coffee-beans" />
-          <Link className="footer-item__label" to="/">
+          <Link className="footer-item__label" to="/coffee-shop-project">
             Coffee house
           </Link>
         </li>
         <li className="footer-item">
-          <Link className="footer-item__label" to="/our-coffee">
+          <Link className="footer-item__label" to="/coffee-shop-project/our-coffee">
             Our coffee
           </Link>
         </li>
         <li className="footer-item">
-          <Link className="footer-item__label" to="/pleasure">
+          <Link className="footer-item__label" to="/coffee-shop-project/pleasure">
             For your pleasure
           </Link>
         </li>

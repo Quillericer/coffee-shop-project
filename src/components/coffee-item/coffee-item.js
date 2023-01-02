@@ -7,7 +7,7 @@ import "./coffee-item.scss";
 const CoffeeItem = memo((props) => {
   const { name, region, price, img, id } = props;
   return (
-    <Link className="filter__item" to={`/coffee-item-about/${id}`}>
+    <Link className="filter__item" to={`/coffee-shop-project/coffee-item-about/${id}`}>
       <img src={img} alt="coffee-product" className="filter__item-img" />
       <div className="filter__item-text">
         <div className="filter__item-name">{name}</div>

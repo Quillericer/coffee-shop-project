@@ -131,9 +131,9 @@ class App extends Component {
         {/* <Pleasure changeRegion={this.changeRegion} filterPanel={this.filterPanel} onFilter={this.onFilter} changePage={this.changePage} data={visibleData} filter={filter}/>; */}
         <Suspense fallback={<span>Loading...</span>}>
           <Routes>
-            <Route path="/" element={<CoffeeHouse bestData={best} />} />
+            <Route path="/coffee-shop-project" element={<CoffeeHouse bestData={best} />} />
             <Route
-              path="/our-coffee"
+              path="/coffee-shop-project/our-coffee"
               element={
                 <OurCoffee
                   changeRegion={this.changeRegion}
@@ -145,7 +145,7 @@ class App extends Component {
               }
             />
             <Route
-              path="/pleasure"
+              path="/coffee-shop-project/pleasure"
               element={
                 <Pleasure
                   changeRegion={this.changeRegion}
@@ -157,7 +157,7 @@ class App extends Component {
               }
             />
             <Route
-            path="/coffee-item-about/:id"
+            path="/coffee-shop-project/coffee-item-about/:id"
             element={<CoffeePage/>}
             />
           </Routes>

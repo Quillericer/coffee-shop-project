@@ -20,7 +20,7 @@ const CoffeeHouse = (props) => {
             <br />
             Want to try our beans?
           </div>
-          <Link className="promo__btn" to="/our-coffee">
+          <Link className="promo__btn" to="/coffee-shop-project/our-coffee">
             More
           </Link>
         </div>
